@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/{operation}/{n1}/{n2}', function (string $operation, int $n1, int $n2) {
@@ -22,3 +23,6 @@ Route::get('/greeting/{name}/{lastname?}', function (string $name, string $lastn
 Route::get('/view/greeting/{name}', function(string $name) {
     return view('greeting', ['name'=> $name]);
 })->whereAlpha('name');
+
+Route::get('/controller/greeting/{name}', [UserController::class, 'index'])
+    ->whereAlpha('name');

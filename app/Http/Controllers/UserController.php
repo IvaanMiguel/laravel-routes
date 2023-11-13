@@ -9,4 +9,8 @@ class UserController extends Controller
     public function index(string $name) {
         return view('greeting', ['name' => $name]);
     }
+
+    public function show() {
+        
+    }
 }

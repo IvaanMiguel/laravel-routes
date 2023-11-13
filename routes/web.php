@@ -20,8 +20,8 @@ Route::get('/greeting/{name}/{lastname?}', function (string $name, string $lastn
     return "Hello, {$name} {$lastname}.";
 })->whereAlpha(['name', 'lastname']);
 
-Route::get('/view/greeting/{name}', function(string $name) {
-    return view('greeting', ['name'=> $name]);
+Route::get('/view/greeting/{name}', function (string $name) {
+    return view('greeting', ['name' => $name]);
 })->whereAlpha('name');
 
 Route::get('/controller/greeting/{name}', [UserController::class, 'index'])

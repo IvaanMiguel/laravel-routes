@@ -24,5 +24,8 @@ Route::get('/view/greeting/{name}', function (string $name) {
     return view('greeting', ['name' => $name]);
 })->whereAlpha('name');
 
-Route::get('/controller/greeting/{name}', [UserController::class, 'index'])
-    ->whereAlpha('name');
+Route::get('/users', [UserController::class, 'index']);
+Route::get('/users/{id}', [UserController::class, 'show']);
+
+// Route::get('/controller/greeting/{name}', [UserController::class, 'index'])
+//     ->whereAlpha('name');
